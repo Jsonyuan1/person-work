@@ -1,0 +1,81 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>个人静态网站</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        nav {
+            display: flex;
+            justify-content: flex-end; 
+            align-items: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+        nav img {
+            border-radius: 50%; 
+        }
+        .homework {
+            box-sizing: border-box;
+            width:200px;  
+            height: 300px;
+            border: 1px solid #ccc;
+            margin: 10px;
+            margin-right: 20px; 
+            margin-bottom: 20px; 
+            padding: 10px;
+            overflow: hidden;
+            text-align: center;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            display: inline-block;  
+            vertical-align: top;  
+        }
+        .homework img {
+            max-width: 160px;
+            max-height: 160px;
+        }
+        .homework p {
+            max-width: 150px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .homework:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <nav>    <!--学号姓名 -->
+        <h2>219971140袁铭钊</h2>
+        <img src="img/photo112.png" alt="头像" width="50" height="50">
+    </nav>
+    <div class="homework">
+        <h2>练习1</h2>
+        <img src="img/photo1.png" alt="作业图片">
+        <p>描述：<a href="https://yuan506.gitee.io/jasonyuan_web/作业一.html" title="作业一" style="text-decoration: none;">使用javascript在页面显示5行的三角形、平行四边形和菱形（菱形选做）</a></p>
+    </div>
+    <div class="homework">
+        <h2>练习2</h2>
+        <img src="img/fruit.jpg" alt="作业图片">
+        <p>描述：<a href="https://yuan506.gitee.io/jasonyuan_web/作业二.html" title="作业二" style="text-decoration: none;">使用DOM操纵图片</a></p>
+    </div>
+    <div class="homework">
+        <h2>练习三</h2>
+        <img src="img/up.png" alt="作业图片">
+        <p>描述：<a href="https://yuan506.gitee.io/jasonyuan_web/作业三.html" title="作业三" style="text-decoration: none;">用键盘操纵坦克移</a></p>
+    </div>
+    <div class="homework">
+        <h2>实验四</h2>
+        <img src="img/move2.png" alt="作业图片">
+        <p>描述：<a href="https://yuan506.gitee.io/jasonyuan_web/实验四.html" title="实验四" style="text-decoration: none;">实验四-制作web页面广告</a></p>
+    </div>
+</body>
+</html>
