@@ -1,0 +1,70 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>让坦克开起来</title>
+		<style type="text/css">
+			input{font-size:26px;margin-top: 20px;}
+			body{background-image: url(img/grassland.png);}
+			#mytank{position: absolute;left:10px;top:100px}
+		</style>
+	</head>
+	<body>		
+		<img id="mytank" src="img/right.png"/>
+		<script>
+			// 编写代码，让坦克能上下左右移动
+			// 获取图片元素
+			let img = document.getElementById('mytank');
+			// 设置图片的初始位置
+			let imgPosition = {
+			    x: 10,
+			    y: 100
+			};
+			// 设置移动的规格
+			let step = 4;
+			// 监听键盘按下事件
+			window.addEventListener('keydown', function(event) {
+				//获取浏览器窗口宽度和高度，用于禁止坦克驶出屏幕
+				let maxWidth = window.innerWidth;
+				let maxHeight = window.innerHeight;
+			    switch (event.key) {
+			        case 'w':
+			            // 向上移动
+						if (imgPosition.y - step >= 0) {
+							//// 更换图片
+						img.src = 'img/up.png';
+			            imgPosition.y -= step;}
+			            break;
+			        case 'a':
+			            // 向左移动
+						 if (imgPosition.x - step >= 0) {
+						img.src='img/left.png';
+			            imgPosition.x -= step;}
+			            break;
+			        case 's':
+			            // 向下移动
+						//offsetWidth内边距和边框
+						if (imgPosition.y + step <= maxHeight - img.offsetHeight) {
+					    img.src='img/down.png';
+			            imgPosition.y += step;}
+			            break;
+			        case 'd':
+			            // 向右移动
+						 if (imgPosition.x + step <= maxWidth - img.offsetWidth) {
+						img.src='img/right.png'
+			            imgPosition.x += step;}
+			            break;
+			    }
+			
+			    // 更新图片出现的位置
+			    img.style.left = imgPosition.x + 'px';
+			    img.style.top = imgPosition.y + 'px';
+			});
+			window.addEventListener('contextmenu', function(event) {
+			    // 阻止使用鼠标右键菜单
+			    event.preventDefault();
+			});
+
+
+		</script>
+	</body>
+</html>
