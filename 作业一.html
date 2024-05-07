@@ -1,0 +1,67 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>第一周课后作业</title>
+	</head>
+	<body>
+		<!--219971140 袁铭钊-->
+		<!--页面显示等边三角形-->
+		<script>
+			for (var i = 1; i <= 5; i++) {
+			for(var m=1;m<=5-i;m++){
+				document.write('&nbsp');
+			}
+			 	for (var j = 1; j <= i; j++) {
+			 		document.write("*&nbsp");
+			 	}
+			 	document.write("<br/>");  
+			 }
+		</script>
+		<br/>
+		<!--页面显示平行四边形-->
+		<script>
+			 for(var i=1; i<=5; i++)
+			 {
+			    for(var j=5; j>i; j--)
+			    {
+			      document.write('&nbsp');
+			    }
+			    for(var m=1; m<=5; m++)
+			    {
+			      document.write('*&nbsp');
+			    }
+			    document.write('<br/>');
+			 }
+		</script>
+		<br/>
+		<!--页面显示菱形-->
+		<script>
+			var i, j, m;
+			var size = 3;
+			for(i=1; i<=size; i++)
+			{
+			   for(j=size; j>i; j--)
+			   {
+			     document.write('&nbsp&nbsp');
+			   }
+			   for(m=1; m<=(2*i-1); m++)
+			   {
+			     document.write('*&nbsp');
+			   }
+			   document.write('<br/>');
+			}
+			for(i=size-1; i>=1; i--)
+			{
+			  for(j=size; j>i; j--)
+			  {
+			    document.write('&nbsp&nbsp');
+			  }
+			  for(m=1; m<=(2*i-1); m++)
+			  {
+			    document.write('*&nbsp');
+			  }
+			  document.write('<br/>');
+			}
+		</script>
+	</body>
+</html>
