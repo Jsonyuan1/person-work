@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>实验四-制作web页面广告</title>
+	</head>
+	<style>
+		.container {
+			display: flex;
+		}
+
+		.contain {
+			height: 2190px;
+			max-width: 900px;
+			background-color: ghostwhite;
+			border: 1px solid gray;
+			margin: 0 auto;
+			flex: 1;
+			/* 推动宽度 */
+		}
+
+		.title {
+			text-align: center;
+		}
+
+		.article {
+			text-align: left;
+			text-indent: 4ch;
+		}
+
+		.photo-size {
+			width: 85%;
+			margin-left: 68px;
+
+		}
+
+		/* 设计左右对联广告大小及位置*/
+		.double1 {
+			margin-left: auto;
+			height: 300px;
+		}
+		.double2 {
+			margin-right: auto;
+			height: 300px;
+		}
+		/* 使鼠标滚轮滚动时网页内容虽然跟着滚动，但对联广告位置不变，
+		 固定于页面上方*/
+		.double1-container {
+			position: fixed;
+			left: 0;
+		}
+		.double2-container {
+			position: fixed;
+			right: 0;
+		}
+		/* 使广告关闭符号位于广告图片之上，并处于广告图片之上的右上角 */
+		.clear1-container {
+			position: absolute;
+			top: 0;
+			right: 0;
+			z-index: 1;
+		}
+		.clear2-container {
+			position: absolute;
+			top: 0;
+			right: 0;
+			z-index: 1;
+		}
+		/* 设置广告关闭符号大小 */
+		.clear1 {
+			width: 35px;
+		}
+		.clear2 {
+			width: 35px;
+		}
+
+
+
+
+
+        /*让广告位于页面右下角， 
+		使鼠标滚轮滚动时网页内容虽然跟着滚动，但弹窗广告位置不变，
+		 固定于页面右下角*/
+		.move2-container {
+			bottom: 0;
+			position: fixed;
+			right: 0;
+			 
+		}
+        /*设计右下角弹窗广告大小*/
+		.move2 {
+			height: 200px;
+		}
+        /* 使广告关闭符号位于弹窗广告图片之上，并处于广告图片之上的右上角 */
+		.clear3-container {
+			position: absolute;
+			top: 0;
+			right: 0;
+			z-index: 1;
+		}
+		/* 设置弹窗广告关闭符号大小 */
+		.clear3 {
+			width: 35px;
+		}
+		 
+	</style>
+	<body>
+
+		<div class="container">
+			<!-- 对联广告left -->
+			<div class="double1-container">
+				<img id="double1" class="double1" src="./img/double1.png">
+				<div onclick="removeAd1()" class="clear1-container">
+					<img id="clear1" class="clear1" src="./img/clear.png">
+				</div>
+			</div>
+			<!-- 居中内容 -->
+			<div class="contain">
+				<strong>
+					<p class="title" style="font-size: 28px;">神舟十八号载人飞船成功发射 两个乘组航天员会师太空</p>
+				</strong>
+				<p class="article" style="font-size: 22px;">
+					<strong>央视网消息</strong>（新闻联播）：4月25日20时59分，搭载神舟十八号载人飞船的长征二号F遥十八运载火箭在酒泉卫星发射中心成功发射，叶光富、李聪、李广苏3名航天员顺利进入太空。4月26日3时32分，神舟十八号载人飞船与空间站组合体完成自主快速交会对接，两个乘组航天员会师太空。
+				</p>
+				<div><img class="photo-size" src="./img/sky.webp"></div>
+				<p class="article" style="font-size: 22px;">
+					约10分钟后，神舟十八号载人飞船与火箭成功分离，进入预定轨道，航天员乘组状态良好。神舟十七号3名航天员在空间站实时观看了神舟十八号发射的全过程。</p>
+				<p class="article" style="font-size: 22px;">
+					4月26日3时32分，神舟十八号载人飞船成功对接于空间站天和核心舱径向端口，整个对接过程历时约6.5小时。随后，3名航天员开始从神舟十八号载人飞船进入空间站天和核心舱。</p>
+				<div><img class="photo-size" src="./img/sky2.webp"></div>
+				<p class="article" style="font-size: 22px;">5时04分，在轨执行任务的神舟十七号航天员乘组顺利打开“家门”，欢迎远道而来的神舟十八号航天员乘组入驻“天宫”。</p>
+				<div><img class="photo-size" src="./img/sky3.webp"></div>
+				<p class="article" style="font-size: 22px;">随后，两个航天员乘组拍下“全家福”，共同向牵挂他们的全国人民报平安。</p>
+				<p class="article" style="font-size: 22px;">
+					后续，两个航天员乘组将在空间站进行在轨轮换。其间，6名航天员将共同在空间站工作生活约5天时间，完成各项既定工作。神舟十七号航天员乘组将于4月30日返回东风着陆场。</p>
+				<p class="article" style="font-size: 22px;">
+					在空间站工作生活期间，神舟十八号航天员乘组将进行多次出舱活动，开展微重力基础物理、空间材料科学、空间生命科学、航天医学、航天技术等领域实（试）验与应用，完成空间站碎片防护加固装置安装，舱外载荷和舱外平台设备安装与回收等各项任务。
+				</p>
+			</div>
+			<!-- 对联广告right-->
+			<div class="double2-container">
+				<img id="double2" class="double2" src="./img/double2.png">
+				<div onclick="removeAd2()" class="clear2-container">
+					<img id="clear2" class="clear2" src="./img/clear.png">
+				</div>
+			</div>
+			<!--右下角广告-->
+			<div class="move2-container">
+				<img id="move2" class="move2" src="./img/move2.png">
+				<div onclick="removeAd3()" class="clear3-container">
+					<img id="clear3" class="clear3" src="./img/clear.png">
+				</div>
+			</div>
+		</div>
+		<script>
+			function removeAd1() {
+				/* 左对联广告 */
+				// 获取广告元素
+				let double1 = document.getElementById('double1');
+				let clear1 = document.getElementById('clear1');
+				// 关闭广告
+				double1.parentNode.removeChild(double1);
+				clear1.parentNode.removeChild(clear1);
+			}
+			function removeAd2() {
+				/* 右对联广告 */
+				// 获取广告元素
+				let double2 = document.getElementById('double2');
+				let clear2 = document.getElementById('clear2');
+				// 关闭广告
+				double2.parentNode.removeChild(double2);
+				clear2.parentNode.removeChild(clear2);
+			}
+			function removeAd3() {
+				/* 右下角弹出广告 */
+				// 获取广告元素
+				let move2 = document.getElementById('move2');
+				let clear3 = document.getElementById('clear3');
+				// 关闭广告
+				move2.parentNode.removeChild(move2);
+				clear3.parentNode.removeChild(clear3);
+			}
+			window.onload = function() {
+			    let move2Container = document.querySelector('.move2-container');
+			    // 将元素的透明度设置为 0（完全透明）
+			    move2Container.style.opacity = 0;
+			    // 设置一个定时器，在 1000 毫秒后执行函数
+			    setTimeout(function() {
+			        // 设置元素的过渡效果，透明度在 2 秒内变化
+			        move2Container.style.transition = 'opacity 2s';
+			        // 将元素的透明度设置为 1（完全不透明）
+			        move2Container.style.opacity = 1;
+			    }, 1000); //设置1000毫秒的延迟时间
+			}
+		</script>
+	</body>
+</html>
