@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>操纵游戏角色</title>
+		<script src="js/jquery-3.7.1.min.js"></script>  
+	</head>
+	<style>
+		 body{
+			 background-color: black;
+		 }
+		 #player {
+		     position: absolute;   
+		 }
+		 .operation{
+			 margin-left:1300px;
+			 margin-top: 0px;
+			 color:red;
+		 }
+	</style>
+	<body>
+		<img id="player" src="img/player_right.gif">  
+		<div class="operation">
+		<div><h1>鼠标左键移动</h1></div>
+		<div><h1>鼠标右键变身</h1></div></div>
+	</body>
+	<script>
+	var axis = null;  // 中轴线的位置
+	var isBig = false;  // 玩家是否变身
+	$(function(){
+	    $(document).click(function(e){  
+	        var x = e.pageX;  // 获取鼠标点击的x坐标
+	        var y = e.pageY;  // 获取鼠标点击的y坐标
+	        var windowWidth = $(window).width();  // 获取窗口的宽度
+	        var windowHeight = $(window).height();  // 获取窗口的高度
+	        var imgWidth = $("#player").width();  // 获取玩家图片的宽度
+	        var imgHeight = $("#player").height();  // 获取玩家图片的高度
+	
+	        // 防止图片溢出屏幕
+	        if(x + imgWidth > windowWidth) {
+	            x = windowWidth - imgWidth;
+	        }
+	        if(y + imgHeight > windowHeight) {
+	            y = windowHeight - imgHeight;
+	        }
+	
+	        // 判断点击位置与中轴线的关系，并更改图片
+	        if(axis !== null) {
+	            if(x < axis) {
+	                $("#player").attr("src", isBig ? "img/playerbig_left.gif" : "img/player_left.gif");
+	            } else {
+	                $("#player").attr("src", isBig ? "img/playerbig_right.gif" : "img/player_right.gif");
+	            }
+	        }
+	
+	        // 更新中轴线
+	        axis = x;
+	
+	        // 停止当前动画并开始新的动画
+	        $("#player").stop().animate({left: x, top: y},4000);
+	    });
+
+	    $(document).on('contextmenu', function(e) {  // 当鼠标右键点击时
+	        e.preventDefault();  // 阻止默认的右键菜单
+	        var src = $("#player").attr("src");  // 获取玩家图片源
+	        // 根据玩家图片的源判断玩家的方向，并更改图片
+	        if(src === "img/player_right.gif" || src === "img/playerbig_right.gif") {
+	            $("#player").attr("src", "img/playerbig_right.gif");
+	        } else if(src === "img/player_left.gif" || src === "img/playerbig_left.gif") {
+	            $("#player").attr("src", "img/playerbig_left.gif");
+	        }
+	        isBig = true;  // 设置玩家为变身状态
+	    });
+	});
+	</script>
+</html>
