@@ -56,7 +56,7 @@
             case "info_phone":
             case "send_to_phone":
             case "send_from_phone":
-                flag=/^((\(\d{2,3}\))|(\d{3}\-))?1[3,8,5]{1}\d{9}$/.test(value);
+                flag=/^((\+?86\s?)?(\(\d{2,3}\)|\d{3}-))?1[3-9]\d{9}$/.test(value);
                 id="phone";
                 break;
              
