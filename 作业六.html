@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>无限轮播图</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="css/animate.min.css">
+  <link rel="stylesheet" href="css/swiper.min.css">
+   <script src="js/jquery-3.7.1.min.js"></script>  
+   <style>
+	   /* 219971140袁铭钊*/
+  body {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    background-color: #262626;
+  }
+  .swiper-container {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    margin-top: -335px;
+  }
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 450px;
+    height: 670px;
+    border-radius: 10px;
+  }
+  .bg .bgImg{
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    height: 100%;
+  }
+  .shadow{
+    position: absolute;
+    width: 100%;
+    background: rgba(0,0,0,0.4);
+    height: 100%;
+    text-align: center;
+    line-height: 670px;
+    color: #ffffff;
+    font-size: 30px;
+    display: none;
+    border-radius: 10px;
+  }
+  </style>
+</head>
+<body>
+<div class="bg">
+  <div class="swiper-container animated rotateInDownLeft">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" style="background-image:url(img/unit.jpg)"><div class="shadow"><span class="animated zoomIn" style="display:block;">英雄联盟</span></div></div>
+      <div class="swiper-slide" style="background-image:url(img/forever.jpg)"><div class="shadow"><span class="animated zoomIn" style="display:block;">永劫无间</span></div></div>
+      <div class="swiper-slide" style="background-image:url(img/killer.jpg)"><div class="shadow"><span class="animated zoomIn" style="display:block;">刺客信条</span></div></div>
+      <div class="swiper-slide" style="background-image:url(img/aier.jpg)"><div class="shadow"><span class="animated zoomIn" style="display:block;">艾尔登法环</span></div></div>
+      <div class="swiper-slide" style="background-image:url(img/pubg.jpg)"><div class="shadow"><span class="animated zoomIn" style="display:block;">绝地求生</span></div></div>
+      <div class="swiper-slide" style="background-image:url(img/GTA6.jpg)"><div class="shadow"><span class="animated zoomIn" style="display:block;">GTA6</span></div></div>
+      <div class="swiper-slide" style="background-image:url(img/brave.jpg)"><div class="shadow"><span class="animated zoomIn" style="display:block;">无畏契约</span></div></div>
+    </div>
+  </div>
+</div>
+  <script src="js/swiper.min.js"></script>
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      loop:true,
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows : true,
+      },
+    });
+    $(".swiper-slide").mouseenter(function (){
+      $(this).find(".shadow").fadeIn()
+    }).mouseleave(function (){
+      $(this).find(".shadow").fadeOut()
+    })
+  </script>
+</body>
+</html>
