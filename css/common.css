@@ -1,0 +1,55 @@
+body {
+  margin: 0;
+  color: #555;
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;
+  font-size: 15px; }
+
+a {
+  color: #555;
+  text-decoration: none; }
+
+input, textarea {
+  border: 1px solid #ddeafb; }
+
+input[type=submit],
+input[type=button] {
+  cursor: pointer; }
+
+input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  outline: none;
+  margin-bottom: 5px;
+  border-radius: 5px; }
+
+.hint {
+  font-size: 12px;
+  text-align: right;
+  padding-right: 10px;
+  margin-bottom: 15px;
+  visibility: hidden; }
+
+.right {
+  border-color:limegreen; }
+
+.hint_right {
+  color: limegreen; }
+
+.wrong {
+  border-color: red; }
+
+.hint_wrong {
+  color:red; }
+
+input[type=submit],
+.button {
+  display: block;
+  margin: 0 auto;
+  line-height: 20px;
+  font-size: 20px;
+  color: #fff;
+  background:deepskyblue;
+  border: 0; }
+
+ 
